@@ -1,0 +1,27 @@
+span.keen-metric-value {
+    font-size: 4em !important;
+}
+
+span.keen-metric-title {
+    font-size: 1em !important;
+}
+
+.keen-metric-nodata {
+    background-color: orange !important;
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;width:100%;
+& td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+}
+.tg .tg-yw4l{vertical-align:top}
+
+#filterpane {
+    position: fixed;
+    top:0;
+    z-index: 1;
+    width: 100%;
+}
+
+#graphpane {
+    margin-top:240px;
+}
