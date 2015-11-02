@@ -363,7 +363,7 @@ var drawMultiAvgGraph = function(key, title, subchannels) {
   var query = [];
 
   for(sc in subchannels) {
-    query.push(new Keen.Query("average", {
+    query.push(new Keen.Query("sum", {
       eventCollection: suite,
       filters: queryFilters(key+"."+subchannels[sc]),
       group_by: key+"."+subchannels[sc],
@@ -392,13 +392,33 @@ var drawMultiAvgGraph = function(key, title, subchannels) {
         var compositeData = {result:[]};
         for (i = 0; i < res.length; i++) {
           if(res[i].result[0] != null) {
-            //compositeData.result.push(res[i].result[0]);
+
             var ta = Object.keys(res[i].result[0]);
             ta.splice(ta.indexOf("result"),1);
             var name = ta[0].substr(ta[0].indexOf('.')+1);
+            // determine average for that
+
+            //[a] determine total
+            var results = $.map(res[i].result, function(val, j) {
+              return val.result;
+            });
+            var total = 0;
+            for (var j in results) {
+              total += results[j];
+            }
+
+            //[b] determine number of results
+            var instances = $.map(res[i].result, function(val, j) {
+              return val.result / val[key+"."+name];
+            });
+            var instTotal = 0;
+            for (var j in instances) {
+              instTotal += instances[j];
+            }
+
             compositeData.result.push({
               name: name,
-              result: res[i].result[0].result
+              result: total/instTotal
             });
           }
         }
