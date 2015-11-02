@@ -161,8 +161,7 @@ var drawMetric = function(key) {
     filters: queryFilters(key + ".comments"),
     //group_by: "game-players.value",
     targetProperty: key + ".comments",
-    timeframe: "this_1_years",
-    maxAge: 900
+    timeframe: "this_1_years"
   });
 
   var req = client.run(query, function(err, res){
@@ -208,8 +207,7 @@ var drawUniqueMetric = function(key, title) {
     filters: queryFilters(key),
     //group_by: "game-players.value",
     targetProperty: key,
-    timeframe: "this_1_years",
-    maxAge: 900
+    timeframe: "this_1_years"
   });
 
   var req = client.run(query, function(err, res){
@@ -255,8 +253,7 @@ var drawGraph = function(key, title) {
     filters: queryFilters(key + ".value"),
     group_by: "game-players.value",
     targetProperty: key + ".value",
-    timeframe: "this_1_years",
-    maxAge: 900
+    timeframe: "this_1_years"
   });
 
     var req = client.run(query, function(err, res){
@@ -305,8 +302,7 @@ var drawMultigraph = function(key, title, subchannels) {
       filters: queryFilters(key+"."+subchannels[sc]),
       group_by: key+"."+subchannels[sc],
       //targetProperty: key + ".value",
-      timeframe: "this_1_years",
-      maxAge: 900
+      timeframe: "this_1_years"
     }));
   }
 
@@ -372,8 +368,7 @@ var drawMultiAvgGraph = function(key, title, subchannels) {
       filters: queryFilters(key+"."+subchannels[sc]),
       group_by: key+"."+subchannels[sc],
       targetProperty: key+"."+subchannels[sc],
-      timeframe: "this_1_years",
-      maxAge: 900
+      timeframe: "this_1_years"
     }));
   }
 
