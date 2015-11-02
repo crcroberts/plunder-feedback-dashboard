@@ -35,11 +35,11 @@ var reload = function() {
   drawMetric("role-disfavored-comments");
 
   drawMultigraph("loot-pivotal",               "Preferred Scoring Methods",
-    ["Grog/Limes", "Instruments", "Snuff", "Doubloons", "Jewelry", "Curios", "Maps", "Burying", "Spyglass", "Scrimshaw", "Daggers", "Unknown"]);
+    ["Grog/Limes", "Instruments", "Snuff", "Doubloons", "Jewelry", "Curios", "Trade Goods", "Maps" "Spyglass", "Scrimshaw", "Daggers", "Unknown"]);
   drawMetric("loot-pivotal-comments");
 
   drawMultigraph("loot-ineffectual",            "Disfavored Scoring Methods",
-    ["Grog/Limes", "Instruments", "Snuff", "Doubloons", "Jewelry", "Curios", "Maps", "Burying", "Spyglass", "Scrimshaw", "Daggers", "Unknown"]);
+    ["Grog/Limes", "Instruments", "Snuff", "Doubloons", "Jewelry", "Curios", "Trade Goods", "Maps" "Spyglass", "Scrimshaw", "Daggers", "Unknown"]);
   drawMetric("loot-ineffectual-comments");
 
   drawMultiAvgGraph("role-rating",            "Average Role Ratings",
@@ -48,7 +48,7 @@ var reload = function() {
   drawMetric("role-ratings-comments");
 
   drawMultiAvgGraph("loot-rating",            "Average Loot Ratings",
-    ["Grog/Limes", "Instruments", "Snuff", "Doubloons", "Jewelry", "Curios", "Maps", "Scrimshaw", "Daggers"]);
+    ["Grog/Limes", "Instruments", "Snuff", "Doubloons", "Jewelry", "Curios", "Trade Goods", "Maps", "Scrimshaw", "Daggers"]);
   drawMetric("loot-ratings-comments");
 
   drawUniqueMetric("misc-feedback",         "Other Feedback");
